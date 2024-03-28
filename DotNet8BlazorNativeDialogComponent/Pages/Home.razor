@@ -57,10 +57,14 @@
     DialogComponent? dialogComponent;
     string Message;
     Product Product = new();
-    
+
     private async Task ShowDialog()
     {
         await js.InvokeVoidAsync("MyDialogFunction");
+        dialogComponent!.LoadDefault();
+        //dialogComponent!.ClearProductContainer();
+        //dialogComponent.ChangeTitle("Add");
+        //Product = new();
     }
     
     // Add Product
